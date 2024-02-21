@@ -1,6 +1,4 @@
-# Planned coding challenge: Memory lane
-
-**Please avoid initiating pull requests on this repository or forking this repository. To submit your solution, either set up a repository on your own account or forward a zip file to the appropriate contact within our talent team.**
+# Memory lane
 
 ### Problem definition
 
@@ -8,21 +6,21 @@ After a series of discovery calls we found out a problem that our users are faci
 
 As a first iteration for this solution, we want to build a web application that allows users to create a memory lane and share it with friends and family. A memory lane is a collection of events that happened in a chronological order. Each event consists of a title, a description, a timestamp, and at least one image.
 
-## Deliverables
+## Demo
 
-- Clone this repository and create a new branch with your name. Open a pull request on your own instance of the repository.
-- An updated README providing a high level explanation of your implementation.
-- **Screenshots or a short video/gif** showing your UI implementation.
-- Update the API to accommodate for your technical design. Run the API by using `npm run serve:api`.
-- The provided mockup is only for reference and inspiration. Feel free to improve it!
+[Loom Demo Video](https://www.loom.com/share/82a113352bf34c02a208ee834a5e8055?sid=84872db2-fa4f-411e-ad38-0131b7575f9c)
 
-### FAQ
+## High level architecture
 
-- **Can I add a framework like Next?** If you have the time, go for it.
-- **Is user authentication required?** No, it is not required.
-- **Can I use a component library?** Yes, you can use a component library.
-- **What will you be looking for?** Good user experience, reusable code, and a well thought out technical design.
+#### Frontend
 
-### Inspiration mockup
+- I utilized a Next.js app along with tailwindcss. This was done do to the familarity with the framework as well as extensive support from the community. I also incorporated different libraries like uploadthing to support uploading images and embla-carousel-react to quickly put together a carousel of images.
 
-![Memory lane mockup](./memory_lane.png)
+- I decided to go with a carousel as opposed to just displaying a row of images as it would better support handling multiple images. Otherwise, I would need to make a decision on how I would want to handle what happens when the images grow bigger than the card they're positioned in.
+
+- Added search functionality based off name, description, and tags. Helps filter what you're searching for.
+
+#### Backend
+
+- I kept majority of the backend the same. I just modified it to support the new fields I stored. I decided to store pictures and tags as a string that i could just parse as a json object when I need to access it on the frontend.
+- I also decided to play around with the GPT api and incorporate it in the backend by automatically tagging a memory. I thought this was a good use case as it would help support useful features in the future, like filtering your hundred's of memories by a certain tag. Also would be interesting to show data around what type of memories you experience the most.
